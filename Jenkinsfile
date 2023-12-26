@@ -27,14 +27,14 @@ pipeline{
                 echo 'package'
             }
 }
-}
-}
          stage('verify'){
                          steps{
                 sh 'sleep 5'
                 echo 'verify'
             }
 }
+   }
+   }
         stage('install'){
                        steps{
                 sh 'sleep 5'
