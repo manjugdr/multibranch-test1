@@ -7,6 +7,8 @@ pipeline{
                 echo 'Validate'
             }
         }
+        stage('parallel'){
+            paralle{
         stage('Compile'){
                        steps{
                 sh 'sleep 5'
@@ -17,6 +19,8 @@ pipeline{
                         steps{
                 sh 'sleep 5'
                 echo 'test'
+            }
+        }
             }
         }
         stage('package'){
