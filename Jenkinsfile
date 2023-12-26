@@ -1,26 +1,24 @@
 pipeline{
     agent any
     stages{
-                stage('Validate'){
+                stage('Validate1'){
                                steps{
                 sh 'sleep 5'
                 echo 'Validate'
             }
         }
-        stage('parallel'){
-            paralle{
-        stage('Compile'){
+        stage('Compile1'){
                        steps{
                 sh 'sleep 5'
                 echo 'compile'
             }
         }
+   stage ( 'paralle' ) {
+   parallel {
         stage('test'){
                         steps{
                 sh 'sleep 5'
                 echo 'test'
-            }
-        }
             }
         }
         stage('package'){
@@ -28,6 +26,8 @@ pipeline{
                 sh 'sleep 5'
                 echo 'package'
             }
+}
+}
 }
          stage('verify'){
                          steps{
